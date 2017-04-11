@@ -1,0 +1,60 @@
+PARCELS=parcels
+BASEPARCELS=$(PARCELS)/baseClasses
+DERIVEDPARCELS=$(PARCELS)/derived
+
+CLOUDS=clouds
+BASECLOUDS=$(CLOUDS)/baseClasses
+DERIVEDCLOUDS=$(CLOUDS)/derived
+
+
+/* Cloud base classes */
+$(BASECLOUDS)/bubbleGrowthCloud/bubbleGrowthCloud.C
+
+
+
+/* bubbleGrowth parcel sub-models */
+KINEMATICPARCEL=$(DERIVEDPARCELS)/basicBubbleGrowthParcel
+$(KINEMATICPARCEL)/defineBasicBubbleGrowthParcel.C
+$(KINEMATICPARCEL)/makeBasicBubbleGrowthParcelSubmodels.C
+
+
+
+
+
+
+
+
+/* bolt-on models 
+RADIATION=submodels/addOns/radiation
+$(RADIATION)/absorptionEmission/cloudAbsorptionEmission/cloudAbsorptionEmission.C
+$(RADIATION)/scatter/cloudScatter/cloudScatter.C  */
+
+submodels/BubbleGrowth/PatchInteractionModel/LocalInteraction/patchInteractionData.C
+submodels/BubbleGrowth/PatchInteractionModel/LocalInteraction/patchInteractionDataList.C
+
+KINEMATICINJECTION=submodels/BubbleGrowth/InjectionModel
+$(KINEMATICINJECTION)/BubbleGrowthLookupTableInjection/bubbleGrowthParcelInjectionData.C
+$(KINEMATICINJECTION)/BubbleGrowthLookupTableInjection/bubbleGrowthParcelInjectionDataIO.C
+$(KINEMATICINJECTION)/BubbleGrowthLookupTableInjection/bubbleGrowthParcelInjectionDataIOList.C
+$(KINEMATICINJECTION)/PatchInjection/patchInjectionBase.C
+
+
+
+
+/* integration schemes */
+IntegrationScheme/makeIntegrationSchemes.C
+
+
+/* phase properties */
+phaseProperties/phaseProperties/phaseProperties.C
+phaseProperties/phaseProperties/phasePropertiesIO.C
+phaseProperties/phasePropertiesList/phasePropertiesList.C
+
+
+/* additional helper classes */
+clouds/Templates/BubbleGrowthCloud/cloudSolution/cloudSolution.C
+
+
+
+
+LIB = $(FOAM_USER_LIBBIN)/libmyLagrangianIntermediate

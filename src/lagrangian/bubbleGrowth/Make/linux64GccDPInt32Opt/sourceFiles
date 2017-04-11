@@ -1,0 +1,15 @@
+SOURCE = \
+$(BASECLOUDS)/bubbleGrowthCloud/bubbleGrowthCloud.C \
+$(KINEMATICPARCEL)/defineBasicBubbleGrowthParcel.C \
+$(KINEMATICPARCEL)/makeBasicBubbleGrowthParcelSubmodels.C \
+submodels/BubbleGrowth/PatchInteractionModel/LocalInteraction/patchInteractionData.C \
+submodels/BubbleGrowth/PatchInteractionModel/LocalInteraction/patchInteractionDataList.C \
+$(KINEMATICINJECTION)/BubbleGrowthLookupTableInjection/bubbleGrowthParcelInjectionData.C \
+$(KINEMATICINJECTION)/BubbleGrowthLookupTableInjection/bubbleGrowthParcelInjectionDataIO.C \
+$(KINEMATICINJECTION)/BubbleGrowthLookupTableInjection/bubbleGrowthParcelInjectionDataIOList.C \
+$(KINEMATICINJECTION)/PatchInjection/patchInjectionBase.C \
+IntegrationScheme/makeIntegrationSchemes.C \
+phaseProperties/phaseProperties/phaseProperties.C \
+phaseProperties/phaseProperties/phasePropertiesIO.C \
+phaseProperties/phasePropertiesList/phasePropertiesList.C \
+clouds/Templates/BubbleGrowthCloud/cloudSolution/cloudSolution.C 

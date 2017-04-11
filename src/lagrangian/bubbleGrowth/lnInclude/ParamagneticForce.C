@@ -1,0 +1,1 @@
+../submodels/BubbleGrowth/ParticleForces/Paramagnetic/ParamagneticForce.C
